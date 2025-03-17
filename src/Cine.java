@@ -5,6 +5,51 @@ public class Cine {
     private double precioEntrada;
 
     /**
+     * Devuelve el numero de butacas libres
+     * @return Un int
+     */
+    public int butacasLibre(){
+        return aforo - butacasOcupadas;
+    }
+
+    /**
+     * Devuelve el porcentaje de las butacas ocupadas
+     * @return Devuelve un String
+     */
+    public String porcentajeOcupado(){
+        return Math.round(butacasOcupadas * 10000.0 / aforo) / 100.0 + "%";
+    }
+
+    /**
+     * Devuelve los ingresos de la sala
+     * @return butacasOcupadas x precio
+     */
+    public double ingresosSala(){
+        return butacasOcupadas * precioEntrada;
+    }
+
+    /**
+     * Pone a 0 las butacas ocupadas
+     */
+    public void vaciarSala(){
+        butacasOcupadas = 0;
+    }
+
+    /**
+     * Suma 1 a las butacas ocupadas
+     */
+    public void venderEntrada(){
+        butacasOcupadas++;
+    }
+
+    /**
+     * Resta 1 a las butacas ocupadas
+     */
+    public void devolverEntrada(){
+        butacasOcupadas--;
+    }
+
+    /**
      * Constructor con valores predeterminados
      * Aforo: 100 | Ocupadas: 0 | Titulo: Sin determinar | Precio: 5
      */
@@ -29,7 +74,7 @@ public class Cine {
      */
     public Cine(int aforo, String tituloPelicula, double precioEntrada) {
         this.aforo = aforo;
-        this.butacasOcupadas = 0;
+        this.butacasOcupadas = 1;
         this.tituloPelicula = tituloPelicula;
         this.precioEntrada = precioEntrada;
     }

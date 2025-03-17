@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Cine cine = new Cine(6, "Terror en el instituto", 10);
+        System.out.println(cine.butacasLibre());
+        System.out.println(cine.porcentajeOcupado());
     }
 }
