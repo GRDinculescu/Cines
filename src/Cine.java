@@ -33,20 +33,29 @@ public class Cine {
      */
     public void vaciarSala(){
         butacasOcupadas = 0;
+        System.out.println("Se vació la sala.");
     }
 
     /**
      * Suma 1 a las butacas ocupadas
      */
     public void venderEntrada(){
-        butacasOcupadas++;
+        if (butacasOcupadas < aforo){
+            butacasOcupadas++;
+        } else {
+            System.out.println("Aforo lleno.");
+        }
     }
 
     /**
      * Resta 1 a las butacas ocupadas
      */
     public void devolverEntrada(){
-        butacasOcupadas--;
+        if (butacasOcupadas > 0){
+            butacasOcupadas--;
+        } else {
+            System.out.println("Ya se devolvieron todas las entradas.");
+        }
     }
 
     /**
@@ -74,7 +83,7 @@ public class Cine {
      */
     public Cine(int aforo, String tituloPelicula, double precioEntrada) {
         this.aforo = aforo;
-        this.butacasOcupadas = 1;
+        this.butacasOcupadas = 0;
         this.tituloPelicula = tituloPelicula;
         this.precioEntrada = precioEntrada;
     }
